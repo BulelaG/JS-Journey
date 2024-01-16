@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript form validation- checking non-empty</title>
+    <link rel="stylesheet" href="form-style.css">
+</head>
+<body onload="document.form1.text1.focus()">
+    <div class="mail">
+        <h2>Input an email and submit</h2>
+        <form action="#" name="form1">
+            <ul>
+                <li><input type="text" name="text1"/></li>
+                <li>&nbsp;</li>
+                <li class="submit"><input type="submit" name="submit" value="Submit" onclick="ValidateEmail(document.form.text1)"/></li>
+                <li>&nbsp;</li>
+
+            </ul>
+        </form>
+
+    </div>
+    <script src="email-validation.js"></script>
+</body>
+</html>
