@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow with setInterval</title>
+</head>
+<body>
+
+    <div id="slideshow-container">
+        <img id="slideshow-image" src="" alt="Slideshow Image">
+    </div>
+
+    <script>
+        // Images for the slideshow
+        const images = [
+    'http://www.sololearn.com/uploads/slider/1.jpg', 
+    'http://www.sololearn.com/uploads/slider/2.jpg', 
+    'http://www.sololearn.com/uploads/slider/3.jpg'
+];
+
+        let currentImageIndex = 0;
+
+        function showNextImage() {
+            // Display the next image in the array
+            document.getElementById('slideshow-image').src = images[currentImageIndex];
+
+            // Increment the index, and reset to 0 if it goes beyond the last image
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+        }
+
+        // Set interval to automatically show the next image every 2000 milliseconds (2 seconds)
+        const intervalId = setInterval(showNextImage, 2000);
+
+        // Stop the interval after 10 seconds (10000 milliseconds) - Just for demonstration
+        setTimeout(() => {
+            clearInterval(intervalId);
+        }, 10000);
+    </script>
+
+</body>
+</html>
