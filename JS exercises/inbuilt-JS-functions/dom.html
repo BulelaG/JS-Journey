@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom-method</title>
+</head>
+<body>
+
+    <form name="form1" action="">
+        Enter Name: <input type="text" name="name"/>
+        <input type="button" onclick="printValue()" value="print name">
+
+
+    </form>
+
+    <script>
+     function printValue(){
+        var name = document.form1.name.value;
+        alert("Welcome "+name)
+     }
+
+    </script>
+    
+</body>
+</html>
