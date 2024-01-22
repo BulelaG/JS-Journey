@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fort</title>
+    <script>
+        function validate() {
+            var field1 = document.getElementsByName("field1")[0];
+            var num1 = document.getElementById("num1");
+            var num2 = document.getElementById("num2");
+
+            // Basic validation for the first input field
+            if (field1.value.trim() === "") {
+                alert("Label field cannot be blank.");
+                return false;
+            }
+
+            // Complex validation for the second set of input fields
+            if (num1.value.trim() === "" || num2.value.trim() === "") {
+                alert("Number fields cannot be blank.");
+                return false;
+            }
+
+            if (num1.value !== num2.value) {
+                alert("The 'Number' and 'Repeat' values should be equal.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <form onsubmit="return validate()" method="post">
+
+        <!-- First Set of Input Fields -->
+        Label: <input type="text" name="field1" required />
+        <br />
+
+        <!-- Submit Button for First Set -->
+        <input type="submit" value="Submit First Set" />
+        <br /><br />
+
+        <!-- Second Set of Input Fields -->
+        Number: <input type="text" name="num1" id="num1" required />
+        <br />
+
+        Repeat: <input type="text" name="num2" id="num2" required  />
+        <br />
+
+        <!-- Submit Button for Second Set -->
+        <input type="submit" value="Submit Second Set" />
+
+        <!-- Additional Send Button -->
+        <input type="button" value="Send" onclick="sendData()" />
+    </form>
+
+    <!-- JavaScript function for the additional Send Button -->
+    <script>
+        function sendData() {
+            // Add your logic here for handling the 'Send' button click
+            alert("Sending data...");
+        }
+    </script>
+</body>
+</html>
